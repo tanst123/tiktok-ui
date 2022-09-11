@@ -3,10 +3,16 @@
 
 :root {
     --primary: #fe2c55;
+
+    // Default layout
+    --defalut-layout--header-height: 60px;
+    --defalut-layout--width: 1150px;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 html {
     font-size: 62.5%;
