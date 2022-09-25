@@ -1,11 +1,12 @@
-import Following from '../pages/Following';
 import Home from '../pages/Home';
+import Following from '../pages/Following';
 import Profile from '../pages/Profile';
 import Upload from '../pages/Upload';
-import { HeaderOnly } from '../components/Layout';
 import Search from '../pages/Search';
+import { HeaderOnly } from '../components/Layout';
 
-const publicRoutes = [
+// public Route
+const publicRoute = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
     { path: '/profile', component: Profile },
@@ -13,6 +14,6 @@ const publicRoutes = [
     { path: '/search', component: Search, layout: null },
 ];
 
-const privateRoutes = [];
+const privateRoute = [];
 
-export { publicRoutes, privateRoutes };
+export { publicRoute, privateRoute };

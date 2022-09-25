@@ -1,15 +1,14 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
 }
+
 .container {
-    width: var(--defalut-layout--width);
+    width: var(--default-layout-width);
     display: flex;
 }
+
 .content {
     flex: 1;
-    min-height: 1000px;
-    background-color: aliceblue;
 }
