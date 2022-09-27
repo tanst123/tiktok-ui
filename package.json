@@ -18,12 +18,13 @@
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
+        "util": "^0.12.4",
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
         "customize-cra": "^1.0.0",
         "react-app-rewired": "^2.2.1",
-        "sass": "^1.54.5"
+        "sass": "^1.55.0"
     },
     "scripts": {
         "start": "react-app-rewired start",

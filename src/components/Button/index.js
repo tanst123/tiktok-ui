@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Button.module.scss';
 
+
 const cx = classNames.bind(styles);
 
 function Button({
@@ -26,11 +27,13 @@ function Button({
         ...passProps,
     };
 
-    Object.keys(props).forEach((key) => {
-        if (key.startsWith('on') && typeof props[key] === 'function') {
-            delete props[key];
-        }
-    });
+    if (disable) {
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
+                delete props[key];
+            }
+        });
+    }
 
     if (to) {
         props.to = to;
@@ -45,7 +48,7 @@ function Button({
         [size]: size,
         disable,
         rounded,
-        [className]: className
+        [className]: className,
     });
 
     return (

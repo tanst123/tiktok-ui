@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--default-layout-padding);
 }
 
 .search-result,
@@ -97,7 +98,26 @@
         background: rgba(22, 24, 35, 0.06);
     }
 }
+.action {
+    display: flex;
+    align-items: center;
+}
+.action-btn {
+    font-size: 20px;
+    padding: 4px 16px;
+    color: var(--text-color);
+    background-color: transparent;
+    cursor: pointer;
+}
 
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 16px;
+}
 .more-btn {
     font-size: 2rem;
     margin-left: 20px;
@@ -107,9 +127,4 @@
 }
 .menu-icon {
     margin-top: 4px;
-}
-
-// Menu item
-.menu-items {
-    width: 223px;
 }
