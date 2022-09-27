@@ -1,17 +1,18 @@
 .wrapper {
     font-size: 1.6rem;
     font-weight: 700;
+    font-family: 'ProximaNova', sans-serif;
     min-width: 100px;
-    padding: 6px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-flex;
     line-height: 2.2rem;
-    background-color: var(--white);
-    border: 1px solid transparent;
+    padding: 6px 16px;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--white);
+    border: 1px solid transparent;
+    border-radius: 4px;
     user-select: none;
+    cursor: pointer;
 
     + .wrapper {
         margin-left: 8px;

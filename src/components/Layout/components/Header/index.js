@@ -15,7 +15,6 @@ import {
     faEllipsisVertical,
     faGear,
     faKeyboard,
-    faMagnifyingGlass,
     faPlus,
     faSignOut,
     faSpinner,
@@ -23,7 +22,9 @@ import {
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
 import Menu from '../../../Popper/Menu';
-import { faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { Inbox, Message, SearchIcon } from '../../../Icon';
+import Image from '../../../Image';
 
 const cx = classNames.bind(styles);
 
@@ -124,7 +125,7 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -137,7 +138,12 @@ function Header() {
                         <>
                             <Tippy content="Messages" placement="bottom" delay={[0, 300]}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <Message />
+                                </button>
+                            </Tippy>
+                            <Tippy content="Inbox" placement="bottom" delay={[0, 300]}>
+                                <button className={cx('action-btn')}>
+                                    <Inbox />
                                 </button>
                             </Tippy>
                         </>
@@ -150,10 +156,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/1c9d25f49b345b90abb50329820f0097.jpeg?x-expires=1664370000&x-signature=x9wcRrKwtIPfDmTfDurgSe7hvg0%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d4d9c61122f1f630a16ad28fd6d1fa98~c5_720x720.jpeg?x-expires=1664449200&x-signature=lApS3ZDbLGszOJXMfqD6%2F4TVG38%3D"
                                 alt="Nguyen Van A"
+                                fallback="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/4349e0ebdb4a4540ff111bf0a6221ff2.jpeg?x-expires=1664449200&x-signature=RfwWeULNT59d5ODMtkhFjfAJC1Q%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
