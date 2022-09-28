@@ -3,14 +3,13 @@ import classNames from 'classnames/bind';
 
 import styles from './Button.module.scss';
 
-
 const cx = classNames.bind(styles);
 
 function Button({
     children,
     to,
     href,
-    style,
+    type,
     size,
     rounded,
     leftIcon,
@@ -44,7 +43,7 @@ function Button({
     }
 
     const classes = cx('wrapper', {
-        [style]: style,
+        [type]: type,
         [size]: size,
         disable,
         rounded,

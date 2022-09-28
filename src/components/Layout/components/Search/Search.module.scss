@@ -1,0 +1,93 @@
+.search-result,
+.search {
+    width: 361px;
+}
+.search-title {
+    font-size: 1.4rem;
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 600;
+    padding: 5px 12px;
+}
+.search {
+    height: var(--search-height);
+    background-color: #f1f1f2;
+    border-radius: var(--search-radius);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: relative;
+    border: 1.5px solid transparent;
+    overflow: hidden;
+
+    input {
+        font-size: 1.6rem;
+        color: var(--black);
+        background-color: transparent;
+        caret-color: var(--primary-color);
+        border: none;
+        outline: none;
+        height: 100%;
+        flex: 1;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: var(--text-color);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-space-top) * 2);
+        width: 1px;
+        top: var(--search-space-top);
+        right: var(--search-btn-width);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+.close,
+.loading {
+    position: absolute;
+    right: calc(var(--search-btn-width) + 1px);
+    color: #a6a7ab;
+    font-size: 1.6rem;
+    margin: 0 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn {
+    width: var(--search-btn-width);
+    height: var(--search-height);
+    margin-right: -16px;
+    border-bottom-right-radius: var(--search-radius);
+    border-top-right-radius: var(--search-radius);
+    font-size: 2rem;
+    color: #a6a7ab;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+
+    &:active {
+        background: rgba(22, 24, 35, 0.06);
+    }
+}
