@@ -4,9 +4,9 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 
-import routesConfig from '../../../../config/routes';
+import config from '../../../config';
 import styles from './Header.module.scss';
-import images from '../../../../assets/images';
+import images from '../../../assets/images';
 import {
     faCircleQuestion,
     faEarthEurope,
@@ -16,11 +16,11 @@ import {
     faPlus,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
-import Button from '../../../Button';
-import Menu from '../../../Popper/Menu';
+import Button from '../../../components/Button';
+import Menu from '../../../components/Popper/Menu';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { Inbox, Message } from '../../../Icon';
-import Image from '../../../Image';
+import { Inbox, Message } from '../../../components/Icon';
+import Image from '../../../components/Image';
 import Search from '../Search';
 
 const cx = classNames.bind(styles);
@@ -90,7 +90,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={images.logo} alt="tiktok" />
                     </Link>
                 </div>
@@ -126,9 +126,8 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d4d9c61122f1f630a16ad28fd6d1fa98~c5_720x720.jpeg?x-expires=1664449200&x-signature=lApS3ZDbLGszOJXMfqD6%2F4TVG38%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d4d9c61122f1f630a16ad28fd6d1fa98~c5_720x720.jpeg?x-expires=1664794800&x-signature=A8fsYMJiOm8g9W5JUWbNCIFhwOg%3D"
                                 alt="Nguyen Van A"
-                                fallback="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/4349e0ebdb4a4540ff111bf0a6221ff2.jpeg?x-expires=1664449200&x-signature=RfwWeULNT59d5ODMtkhFjfAJC1Q%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
